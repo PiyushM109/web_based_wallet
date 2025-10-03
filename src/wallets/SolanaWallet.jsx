@@ -11,6 +11,7 @@ export function SolanaWallet({ mnemonic }) {
   return (
     <div>
       <button
+        className="bg-[#242424] px-4 py-2 m-2 border rounded-lg border-slate-800 hover:border-slate-700"
         onClick={function () {
           const seed = mnemonicToSeed(mnemonic);
           const path = `m/44'/501'/${currentIndex}'/0'`;
@@ -24,7 +25,9 @@ export function SolanaWallet({ mnemonic }) {
         Add Solana wallet
       </button>
       {publicKeys.map((p) => (
-        <div>{p.toBase58()}</div>
+        <p className="bg-[#242424] px-4 py-1 text-lg font-semibold rounded-xl m-2 text-center">
+          {p.toBase58()}
+        </p>
       ))}
     </div>
   );
